@@ -16,18 +16,20 @@ function gotPoses(results) {
     if(results.length > 0) {
         console.log(results);
 
-        leftWristX = resuls[0].pose.leftWrist.X;
-        rightWristX = resuls[0].pose.rightWrist.X;
+        leftWristX = results[0].pose.leftWrist.x;
+        rightWristX = results[0].pose.rightWrist.x;
         difference = floor(leftWristX - rightWristX);
     }
 
 }
 function modelLoaded() {
     console.log('PoseNet has been Initialized'); }
+
 function draw() {
     background("#defffe");
 
     textSize(difference);
     fill("#FFE787");
+    stroke("red");
     text('Aathini', 50, 400);
 }
